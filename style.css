@@ -1,0 +1,232 @@
+/* ===== PALETA BARW I SYSTEM TYPOGRAFICZNY ===== */
+:root {
+  --bg-sand: #FBF9F4;         /* Niezwykle miękkie, jasne, luksusowe tło */
+  --bg-white: #FFFFFF;
+  --text-main: #2C2520;       /* Ciepła, łagodna czerń — idealna do długiego czytania */
+  --text-muted: #5E534C;     /* Kolor pomocniczy dający odpoczynek oczom */
+  --accent-terracotta: #C85A32; /* Stonowany, drogi odcień ceglasty */
+  --accent-olive: #56644C;    /* Głęboka, prestiżowa zieleń oliwkowa */
+  --border-light: rgba(44, 37, 32, 0.06);
+  
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* ===== GLOBALNE USTAWIENIA CZYTELNOŚCI ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background-color: var(--bg-sand);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.8; /* Klucz do doskonałego czytania — tekst ma przestrzeń */
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Niezależne nagłówki z charakterem editorial */
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* Małe znaczniki sekcji nad nagłówkami */
+.section-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-olive);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+/* ===== NAWIGACJA ===== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: rgba(251, 249, 244, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+}
+.brand-logo { text-decoration: none; display: flex; flex-direction: column; }
+.logo-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+}
+.logo-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-terracotta);
+  margin-top: 1px;
+}
+.main-navigation { display: flex; align-items: center; gap: 48px; }
+.menu-link {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.menu-link:hover { color: var(--accent-terracotta); }
+
+.nav-btn {
+  background: var(--text-main);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.nav-btn:hover { background-color: var(--accent-terracotta); transform: translateY(-1px); }
+
+/* ===== SEKCJA HERO ===== */
+.hero-section { padding: 120px 0 80px; }
+.hero-wrapper { max-width: 800px; margin: 0 auto 80px; text-align: center; }
+.hero-main-title { font-size: clamp(2.8rem, 5.5vw, 4.2rem); margin-bottom: 28px; letter-spacing: -0.02em; }
+.hero-main-title em { font-style: italic; color: var(--accent-terracotta); font-weight: 400; }
+.hero-description { font-size: 1.2rem; color: var(--text-muted); max-width: 660px; margin: 0 auto 40px; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; }
+
+.cta-button {
+  padding: 16px 36px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.cta-button.primary { background: var(--text-main); color: #fff; }
+.cta-button.primary:hover { background: var(--accent-terracotta); }
+.cta-button.secondary { border: 1px solid rgba(44,37,32,0.15); color: var(--text-main); }
+.cta-button.secondary:hover { background: rgba(44,37,32,0.03); border-color: var(--text-main); }
+
+/* ASYMETRYCZNA SIATKA PREMIUM */
+.gallery-wrapper { margin-top: 20px; }
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+}
+.item-main { grid-row: 1 / 3; }
+.image-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4/3;
+  background-color: #eee;
+}
+.item-main .image-box { aspect-ratio: 1.15 / 1; }
+.image-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 12px; font-style: italic; }
+
+/* ===== SEKCJA MISJI ===== */
+.mission-section { padding: 160px 0; background: var(--bg-white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+.mission-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+.section-heading { font-size: 2.6rem; margin-bottom: 24px; letter-spacing: -0.01em; }
+.paragraph-lead { font-size: 1.15rem; color: var(--text-main); margin-bottom: 24px; font-weight: 400; }
+.paragraph-normal { font-size: 1rem; color: var(--text-muted); margin-bottom: 24px; }
+.editorial-quote { font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; color: var(--accent-terracotta); border-left: 2px solid var(--accent-terracotta); padding-left: 28px; margin-top: 40px; }
+
+.luxury-badge-box { background: var(--bg-sand); padding: 48px; border-radius: 8px; }
+.stat-card { margin-bottom: 40px; }
+.stat-card:last-child { margin-bottom: 0; }
+.stat-number { font-family: var(--font-serif); font-size: 3rem; color: var(--text-main); line-height: 1; display: block; margin-bottom: 8px; }
+.stat-desc { font-size: 0.95rem; color: var(--text-muted); }
+
+/* ===== KARTA DAŃ (CZYSTA I DROGA W WYGLĄDZIE) ===== */
+.menu-section { padding: 160px 0; }
+.menu-intro { max-width: 700px; margin: 0 auto 80px; }
+.text-center { text-align: center; }
+.menu-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.category-wrapper { margin-bottom: 64px; }
+.category-heading { font-size: 1.5rem; letter-spacing: 0.02em; padding-bottom: 16px; border-bottom: 1px solid var(--text-main); margin-bottom: 40px; }
+
+.menu-dish-item { margin-bottom: 32px; }
+.dish-main-info { display: flex; align-items: baseline; justify-content: space-between; }
+.dish-name { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; color: var(--text-main); }
+.dish-price { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 500; color: var(--accent-terracotta); }
+.dish-line { flex-grow: 1; border-bottom: 1px dashed rgba(44,37,32,0.12); margin: 0 16px; }
+.dish-details { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; max-width: 85%; }
+
+/* Subtelny wyróżnik polecanych dań bez zbędnego chaosu */
+.featured-dish .dish-name { color: var(--text-main); }
+.badge-recommend { font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600; text-transform: uppercase; background: rgba(200,90,50,0.08); color: var(--accent-terracotta); padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.02em; }
+.menu-footnote { font-size: 0.85rem; font-style: italic; color: var(--accent-olive); margin-top: 16px; }
+
+.menu-info-banner { text-align: center; background: var(--bg-white); border: 1px solid var(--border-light); padding: 40px; border-radius: 8px; margin-top: 40px; }
+.menu-info-banner a { color: var(--accent-terracotta); text-decoration: none; font-weight: 600; }
+
+/* ===== SEKCJA GODZINY (MODERN BOX) ===== */
+.hours-section { padding: 40px 0; }
+.hours-card { background: var(--text-main); color: #fff; border-radius: 16px; display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; }
+.hours-text-side { padding: 80px; }
+.hours-heading { color: #fff; font-size: 2.4rem; margin-bottom: 16px; }
+.hours-lead { color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 48px; }
+.hours-rows { display: flex; flex-direction: column; gap: 24px; }
+.hours-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; font-size: 1.1rem; }
+.hours-row strong { font-family: var(--font-serif); color: #DFC5B3; font-weight: 400; }
+
+.hours-image-side { background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('cafe-rownik-nowy-otwarcie-th-47.avif'); background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 60px; }
+.hours-quote { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); padding: 32px; border-radius: 6px; font-family: var(--font-serif); font-style: italic; color: #fff; font-size: 1.1rem; }
+
+/* ===== KONTAKT & MAPA GOOGLE ===== */
+.contact-section { padding: 160px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; }
+.contact-methods { margin-top: 48px; display: flex; flex-direction: column; gap: 32px; }
+.contact-method-item { border-bottom: 1px solid var(--border-light); padding-bottom: 16px; }
+.contact-method-item h5 { font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-olive); margin-bottom: 6px; }
+.contact-method-item p { font-size: 1.2rem; font-weight: 500; }
+.contact-method-item a { color: inherit; text-decoration: none; }
+.contact-method-item a:hover { color: var(--accent-terracotta); }
+
+.contact-map-side { display: flex; }
+.map-container { width: 100%; min-height: 440px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-light); }
+
+/* ===== SPECJALNE DOSTOSOWANIE MOBILNE (RESPONSIVE RWD) ===== */
+@media (max-width: 1024px) {
+  .editorial-grid { grid-template-columns: 1fr; gap: 24px; }
+  .item-main { grid-row: auto; }
+  .mission-grid { grid-template-columns: 1fr; gap: 56px; }
+  .menu-columns { grid-template-columns: 1fr; gap: 48px; }
+  .hours-card { grid-template-columns: 1fr; }
+  .hours-image-side { min-height: 280px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+}
+
+@media (max-width: 768px) {
+  .main-navigation { display: none; } /* Ukrywamy surowy stary widok na rzecz pełnego skupienia na czytaniu */
+  .container { padding: 0 24px; }
+  .hero-section { padding: 80px 0 40px; }
+  .mission-section, .menu-section, .contact-section { padding: 100px 0; }
+  .hours-text-side { padding: 40px 24px; }
+}
+
+/* ===== FOOTER ===== */
+.main-footer { background: var(--text-main); color: rgba(251,249,244,0.6); padding: 80px 0 60px; font-size: 0.9rem; }
+.footer-container { display: flex; flex-direction: column; gap: 48px; }
+.footer-brand-info h4 { color: #fff; font-size: 1.2rem; letter-spacing: 0.05em; margin-bottom: 12px; }
+.footer-brand-info p { max-width: 460px; font-size: 0.85rem; line-height: 1.6; }
+.footer-bottom-bar { border-top: 1px solid rgba(251,249,244,0.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.signature-tag { font-family: var(--font-serif); font-style: italic; color: #DFC5B3; }
