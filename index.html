@@ -33,7 +33,7 @@
 
     <section class="hero-section">
       <div class="container">
-        <div class="hero-wrapper">
+        <div class="hero-wrapper reveal-up">
           <span class="section-tag">Wrocław • Nadodrze</span>
           <h1 class="hero-main-title">Przestrzeń, w której<br>kawa <em>znaczy więcej.</em></h1>
           <p class="hero-description">Wyjątkowa klubokawiarnia tworzona we współpracy ze Stowarzyszeniem Twórców i Zwolenników Psychostymulacji. Miejsce pełne szczerości, równego traktowania i rzemieślniczego smaku.</p>
@@ -46,23 +46,23 @@
 
       <div class="container gallery-wrapper">
         <div class="editorial-grid">
-          <div class="grid-item item-main">
+          <div class="grid-item item-main reveal-up">
             <div class="image-box">
-              <img src="818141_wr29s6_7_cafe_rownik__C1200x1200-NWV5L.png.webp" alt="Nasz zespół przy pracy">
+              <img src="img/photo-team-bar.jpg" alt="Zespół Cafe Równik przy barze" loading="lazy">
             </div>
             <div class="item-caption">01 / Serce kawiarni to nasz zespół</div>
           </div>
-          <div class="grid-item item-side-top">
+          <div class="grid-item item-side-top reveal-up delay-1">
             <div class="image-box">
-              <img src="cafe-rownik-nowy-otwarcie-th-47.avif" alt="Wnętrze Cafe Równik">
+              <img src="img/photo-team-event.jpg" alt="Wspólne chwile zespołu Równik" loading="lazy">
             </div>
-            <div class="item-caption">02 / Przytulne, jasne wnętrze</div>
+            <div class="item-caption">02 / Razem świętujemy każdą okazję</div>
           </div>
-          <div class="grid-item item-side-bottom">
+          <div class="grid-item item-side-bottom reveal-up delay-2">
             <div class="image-box">
-              <img src="IMG_6293.webp" alt="Wejście do lokalu">
+              <img src="img/photo-team-dinner.jpg" alt="Spotkanie przy wspólnym stole" loading="lazy">
             </div>
-            <div class="item-caption">03 / ul. Jedności Narodowej 47</div>
+            <div class="item-caption">03 / Atmosfera, która łączy</div>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
     <section class="mission-section" id="misja">
       <div class="container">
         <div class="mission-grid">
-          <div class="mission-text">
+          <div class="mission-text reveal-up">
             <span class="section-tag">Inkluzywność & Idea</span>
             <h2 class="section-heading">Więcej niż gastronomia. Prawdziwa równość.</h2>
             <p class="paragraph-lead">W Cafe Równik całkowicie przełamujemy bariery. Nasz wyjątkowy zespół tworzą osoby z niepełnosprawnością intelektualną, które pod okiem doświadczonych terapeutów rozwijają swoje pasje kulinarne i społeczne.</p>
@@ -80,7 +80,7 @@
               „To, co trafia na Twój stół, to owoc szczerej, zaangażowanej pracy i wielkiego serca.”
             </blockquote>
           </div>
-          <div class="mission-stats">
+          <div class="mission-stats reveal-up delay-1">
             <div class="stats-box">
               <div class="stat-card">
                 <span class="stat-number">2018</span>
@@ -102,13 +102,13 @@
 
     <section class="menu-section" id="menu">
       <div class="container">
-        <div class="menu-intro">
+        <div class="menu-intro reveal-up">
           <span class="section-tag">Karta dań</span>
           <h2 class="section-heading text-center">Rzemieślniczy smak tworzony na miejscu</h2>
           <p class="paragraph-lead text-center">Wszystkie potrawy, zupy i wypieki przygotowujemy od podstaw w naszej kuchni, korzystając z tradycyjnych receptur.</p>
         </div>
 
-        <div class="menu-columns">
+        <div class="menu-columns reveal-up delay-1">
           <div class="menu-column">
             <div class="category-wrapper">
               <h3 class="category-heading">Śniadania oraz Przystawki</h3>
@@ -281,7 +281,7 @@
 
     <section class="hours-section" id="godziny">
       <div class="container">
-        <div class="hours-card">
+        <div class="hours-card reveal-up">
           <div class="hours-text-side">
             <span class="section-tag" style="color: #DFC5B3;">Godziny pracy</span>
             <h2 class="hours-heading">Zapraszamy codziennie</h2>
@@ -309,7 +309,7 @@
 
     <section class="contact-section" id="kontakt">
       <div class="container">
-        <div class="contact-grid">
+        <div class="contact-grid reveal-up">
           <div class="contact-info-side">
             <span class="section-tag">Kontakt</span>
             <h2 class="section-heading">Odwiedź nas lub zarezerwuj stolik</h2>
@@ -353,6 +353,29 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Subtelna animacja odkrywania elementów przy scrollu
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Delikatny cień nagłówka po przewinięciu strony
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 8) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>

@@ -188,7 +188,7 @@ h1, h2, h3, h4 {
 .hours-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; font-size: 1.1rem; }
 .hours-row strong { font-family: var(--font-serif); color: #DFC5B3; font-weight: 400; }
 
-.hours-image-side { background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('cafe-rownik-nowy-otwarcie-th-47.avif'); background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 60px; }
+.hours-image-side { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)), url('img/photo-team-bar.jpg'); background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 60px; }
 .hours-quote { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); padding: 32px; border-radius: 6px; font-family: var(--font-serif); font-style: italic; color: #fff; font-size: 1.1rem; }
 
 /* ===== KONTAKT & MAPA GOOGLE ===== */
@@ -230,3 +230,42 @@ h1, h2, h3, h4 {
 .footer-brand-info p { max-width: 460px; font-size: 0.85rem; line-height: 1.6; }
 .footer-bottom-bar { border-top: 1px solid rgba(251,249,244,0.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .signature-tag { font-family: var(--font-serif); font-style: italic; color: #DFC5B3; }
+
+/* ===== ANIMACJE — SCROLL REVEAL ===== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-up.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-up.delay-1.is-visible { transition-delay: 0.12s; }
+.reveal-up.delay-2.is-visible { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* Nagłówek — delikatny cień po przewinięciu */
+.main-header { transition: box-shadow 0.3s ease, background-color 0.3s ease; }
+.main-header.is-scrolled { box-shadow: 0 1px 0 rgba(44,37,32,0.06), 0 8px 24px -16px rgba(44,37,32,0.18); }
+
+/* Hover na zdjęciach galerii — lekkie ożywienie */
+.image-box img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+.image-box:hover img { transform: scale(1.045); }
+.grid-item .image-box { cursor: default; }
+
+/* Subtelny hover na kartach dań */
+.menu-dish-item { transition: transform 0.25s ease; }
+.menu-dish-item:hover { transform: translateX(4px); }
+.menu-dish-item:hover .dish-name { color: var(--accent-terracotta); transition: color 0.25s ease; }
+
+/* Hover na statystykach misji */
+.stat-card { transition: transform 0.3s ease; }
+.stat-card:hover { transform: translateY(-3px); }
+
+/* Mikroanimacja przycisków — już mają transition, dodajemy lekki "lift" */
+.cta-button.secondary:hover { transform: translateY(-1px); }
+.nav-btn { transition: background-color 0.2s, transform 0.2s; }
