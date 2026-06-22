@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe Równik — Wyjątkowa Kawiarnia we Wrocławiu</title>
-  <meta name="description" content="Autorska kawiarnia i restauracja na wrocławskim Nadodrzu. Poznaj nasze rzemieślnicze menu i misję społeczną.">
+  <meta name="description" content="Autorska kawiarnia i restauracja na wrocławskim Nadodrzu. Poznaj nasze rzemieślnicze menu i wyjątkową misję społeczną.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,11 +20,21 @@
         <span class="logo-title">RÓWNIK</span>
         <span class="logo-subtitle">CAFE & RESTO</span>
       </a>
-      <nav class="main-navigation">
+      
+      <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <nav class="main-navigation" id="main-nav">
         <a href="#misja" class="menu-link">Nasza Misja</a>
         <a href="#menu" class="menu-link">Karta dań</a>
         <a href="#godziny" class="menu-link">Godziny</a>
-        <a href="#kontakt" class="menu-link nav-btn">Rezerwacje</a>
+        <a href="#kontakt" class="nav-btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Rezerwacje
+        </a>
       </nav>
     </div>
   </header>
@@ -36,10 +46,10 @@
         <div class="hero-wrapper reveal-up">
           <span class="section-tag">Wrocław • Nadodrze</span>
           <h1 class="hero-main-title">Przestrzeń, w której<br>kawa <em>znaczy więcej.</em></h1>
-          <p class="hero-description">Wyjątkowa klubokawiarnia tworzona we współpracy ze Stowarzyszeniem Twórców i Zwolenników Psychostymulacji. Miejsce pełne szczerości, równego traktowania i rzemieślniczego smaku.</p>
+          <p class="hero-description">Wyjątkowa klubokawiarnia , którą prowadzi Stowarzyszenie Twórców i Zwolenników Psychostymulacji. Miejsce pełne szczerości, równego traktowania i rzemieślniczego smaku.</p>
           <div class="hero-buttons">
             <a href="#menu" class="cta-button primary">Zobacz menu</a>
-            <a href="#misja" class="cta-button secondary">Poznaj naszą historię</a>
+            <a href="#misja" class="cta-button secondary">Poznaj historię</a>
           </div>
         </div>
       </div>
@@ -48,19 +58,19 @@
         <div class="editorial-grid">
           <div class="grid-item item-main reveal-up">
             <div class="image-box">
-              <img src="img/photo-team-bar.jpg" alt="Zespół Cafe Równik przy barze" loading="lazy">
+              <img src="img/photo-team-bar.jpg" alt="Zespół Cafe Równik przy barze">
             </div>
             <div class="item-caption">01 / Serce kawiarni to nasz zespół</div>
           </div>
           <div class="grid-item item-side-top reveal-up delay-1">
             <div class="image-box">
-              <img src="img/photo-team-event.jpg" alt="Wspólne chwile zespołu Równik" loading="lazy">
+              <img src="img/photo-team-event.jpg" alt="Wspólne chwile zespołu Równik">
             </div>
             <div class="item-caption">02 / Razem świętujemy każdą okazję</div>
           </div>
           <div class="grid-item item-side-bottom reveal-up delay-2">
             <div class="image-box">
-              <img src="img/photo-team-dinner.jpg" alt="Spotkanie przy wspólnym stole" loading="lazy">
+              <img src="img/photo-team-dinner.jpg" alt="Spotkanie przy wspólnym stole">
             </div>
             <div class="item-caption">03 / Atmosfera, która łączy</div>
           </div>
@@ -81,7 +91,7 @@
             </blockquote>
           </div>
           <div class="mission-stats reveal-up delay-1">
-            <div class="stats-box">
+            <div class="stats-box luxury-badge-box">
               <div class="stat-card">
                 <span class="stat-number">2018</span>
                 <p class="stat-desc">Rok, w którym rozpoczęliśmy naszą wspólną drogę.</p>
@@ -106,12 +116,21 @@
           <span class="section-tag">Karta dań</span>
           <h2 class="section-heading text-center">Rzemieślniczy smak tworzony na miejscu</h2>
           <p class="paragraph-lead text-center">Wszystkie potrawy, zupy i wypieki przygotowujemy od podstaw w naszej kuchni, korzystając z tradycyjnych receptur.</p>
+          
+          <div class="menu-filters">
+            <button class="filter-btn active" data-target="all">Wszystko</button>
+            <button class="filter-btn" data-target="breakfast">Śniadania</button>
+            <button class="filter-btn" data-target="dinner">Obiady</button>
+            <button class="filter-btn" data-target="dumplings">Pierogi & Desery</button>
+            <button class="filter-btn" data-target="drinks">Kawa & Napoje</button>
+          </div>
         </div>
 
         <div class="menu-columns reveal-up delay-1">
-          <div class="menu-column">
+          
+          <div class="menu-column" data-category="breakfast">
             <div class="category-wrapper">
-              <h3 class="category-heading">Śniadania oraz Przystawki</h3>
+              <h3 class="category-heading">Śniadania</h3>
               
               <div class="menu-dish-item">
                 <div class="dish-main-info">
@@ -119,7 +138,7 @@
                   <span class="dish-line"></span>
                   <span class="dish-price">21,00 zł</span>
                 </div>
-                <p class="dish-details">Dwie sztuki pieczywa tostowego z serem żółtym, pieczarkami, szynką i świeżą sałatką.</p>
+                <p class="dish-details">Dwie sztuki pieczywa tostowego z serem żółtym, pieczarkami, szynką i sałatą.</p>
               </div>
 
               <div class="menu-dish-item">
@@ -128,39 +147,50 @@
                   <span class="dish-line"></span>
                   <span class="dish-price">21,00 zł</span>
                 </div>
-                <p class="dish-details">Z kremową mozzarellą, dojrzałym pomidorem, oliwkami, aromatycznym pesto i bukietem sałat.</p>
+                <p class="dish-details">Dwie sztuki pieczywa tostowego z serem mozzarella, pomidorem, oliwkami, pesto i sałatą.</p>
               </div>
 
               <div class="menu-dish-item featured-dish">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Jajecznica z dodatkami <span class="badge-recommend">Polecane</span></h4>
+                  <h4 class="dish-name">Jajecznica <span class="badge-recommend">Polecane</span></h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">25,00 zł</span>
                 </div>
-                <p class="dish-details">Smażona na wiejskim maśle. Do wyboru: ze świeżymi pomidorami lub z chrupiącym boczkiem.</p>
+                <p class="dish-details">Smażona na maśle. Do wyboru: z pomidorami lub z bekonem.</p>
               </div>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Sałatka Szefa Kuchni</h4>
+                  <h4 class="dish-name">Sałatka</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">37,00 zł</span>
                 </div>
-                <p class="dish-details">Chrupkie warzywa serwowane z delikatnym pieczonym kurczakiem lub ze smażonymi krewetkami.</p>
+                <p class="dish-details">Z pieczonym kurczakiem lub z krewetkami.</p>
               </div>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Kremowa Burrata</h4>
+                  <h4 class="dish-name">Buratta</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">25,00 zł</span>
                 </div>
-                <p class="dish-details">Włoski ser serwowany w towarzystwie soczystych pomidorów, oliwy extra virgin oraz ziół.</p>
+                <p class="dish-details">Włoski ser serwowany z pomidorami i przyprawami.</p>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Frytki belgijskie</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">15,00 zł</span>
+                </div>
+                <p class="dish-details">Smażone bez oleju. Opcjonalny sos (+5,00 zł).</p>
               </div>
             </div>
+          </div>
 
+          <div class="menu-column" data-category="dinner">
             <div class="category-wrapper">
-              <h3 class="category-heading">Dania Główne</h3>
+              <h3 class="category-heading">Dania Obiadowe</h3>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
@@ -168,25 +198,25 @@
                   <span class="dish-line"></span>
                   <span class="dish-price">38,00 zł</span>
                 </div>
-                <p class="dish-details">Pierś z kurczaka w autorskiej marynacie, podawana z ryżem lub frytkami oraz zestawem surówek.</p>
+                <p class="dish-details">W autorskiej marynacie, podawany z ryżem lub frytkami i sałatką.</p>
               </div>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Kurczak w ziołach ogrodowych</h4>
+                  <h4 class="dish-name">Kurczak w ziołach</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">38,00 zł</span>
                 </div>
-                <p class="dish-details">Soczyste mięso zestawione z chrupiącymi frytkami belgijskimi oraz lekką, świeżą sałatką.</p>
+                <p class="dish-details">Soczysta pierś podawana z ryżem lub frytkami belgijskimi z sałatką.</p>
               </div>
 
               <div class="menu-dish-item featured-dish">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Pasta con Pollo <span class="badge-recommend">Bestseller</span></h4>
+                  <h4 class="dish-name">Makaron con Pollo <span class="badge-recommend">Bestseller</span></h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">38,00 zł</span>
                 </div>
-                <p class="dish-details">Makaron w aksamitnym sosie śmietankowym z kurczakiem, suszonymi pomidorami i parmezanem.</p>
+                <p class="dish-details">W aksamitnym sosie kremowym z kurczakiem w ziołach, suszonymi pomidorami i parmezanem.</p>
               </div>
 
               <div class="menu-dish-item">
@@ -195,62 +225,124 @@
                   <span class="dish-line"></span>
                   <span class="dish-price">42,00 zł</span>
                 </div>
-                <p class="dish-details">Wykwintny makaron z dodatkiem kremowej burraty, pomidorków i kruszonych pistacji.</p>
+                <p class="dish-details">Wykwintny makaron z dodatkiem kremowej buratty i pomidorów.</p>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Naleśniki ze szpinakiem</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">32,00 zł</span>
+                </div>
+                <p class="dish-details">Serwowane z aromatycznym sosem pomidorowym i parmezanem.</p>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Naleśniki na słodko</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">32,00 zł</span>
+                </div>
+                <p class="dish-details">Z delikatnym białym serem i sezonowymi owocami.</p>
               </div>
             </div>
           </div>
 
-          <div class="menu-column">
+          <div class="menu-column" data-category="dumplings">
             <div class="category-wrapper">
-              <h3 class="category-heading">Domowe Pierogi & Zupy</h3>
+              <h3 class="category-heading">Pierogi & Zupy</h3>
 
               <div class="menu-dish-item featured-dish">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Tradycyjne Pierogi Ruskie</h4>
+                  <h4 class="dish-name">Pierogi ruskie</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">25,00 zł</span>
                 </div>
-                <p class="dish-details">Nasz flagowy produkt. Podawane ze złocistą, duszoną cebulką lub gęstą śmietaną.</p>
+                <p class="dish-details">Tradycyjne z serem i ziemniakami, podawane z cebulką lub śmietaną.</p>
               </div>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Pierogi z soczystym mięsem</h4>
+                  <h4 class="dish-name">Pierogi z mięsem</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">30,00 zł</span>
                 </div>
-                <p class="dish-details">Ręcznie lepione na miejscu, wypełnione tradycyjnym farszem mięsnym.</p>
               </div>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Zupa Dnia</h4>
+                  <h4 class="dish-name">Pierogi z kaszą i grzybami</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">25,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Pierogi z jagodami</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">28,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Pierogi ze szpinakiem</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">28,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Zupa dnia</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">17,00 zł</span>
                 </div>
-                <p class="dish-details">Codziennie nowa, świeża zupa-krem przygotowywana z sezonowych warzyw.</p>
+                <p class="dish-details">Świeże zupy-krem przyrządzane z sezonowych warzyw.</p>
               </div>
-              <p class="menu-footnote">* W ofercie sezonowej posiadamy również pierogi z jagodami (28 zł) oraz ze szpinakiem (28 zł).</p>
             </div>
 
             <div class="category-wrapper">
-              <h3 class="category-heading">Kawiarnia & Desery</h3>
+              <h3 class="category-heading">Ciasta i Desery</h3>
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Espresso Klasyczne / Podwójne</h4>
+                  <h4 class="dish-name">Sernik rzemieślniczy</h4>
                   <span class="dish-line"></span>
-                  <span class="dish-price">13 / 16 zł</span>
+                  <span class="dish-price">18,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Pucharek lodowy</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">18,00 zł</span>
+                </div>
+                <p class="dish-details">Trzy gałki lodów z dodatkiem owoców i bitej śmietany.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-column" data-category="drinks">
+            <div class="category-wrapper">
+              <h3 class="category-heading">Kawa & Herbata</h3>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Espresso</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">13,00 zł</span>
                 </div>
               </div>
 
               <div class="menu-dish-item featured-dish">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Orange Espresso <span class="badge-recommend">Autorskie</span></h4>
+                  <h4 class="dish-name">Orange Espresso <span class="badge-recommend">Kultowe</span></h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">20,00 zł</span>
                 </div>
-                <p class="dish-details">Niezwykle orzeźwiające połączenie intensywnego espresso ze świeżo wyciskanym sokiem pomarańczowym.</p>
               </div>
 
               <div class="menu-dish-item">
@@ -263,14 +355,46 @@
 
               <div class="menu-dish-item">
                 <div class="dish-main-info">
-                  <h4 class="dish-name">Domowy Sernik Rzemieślniczy</h4>
+                  <h4 class="dish-name">Latte Macchiato</h4>
                   <span class="dish-line"></span>
                   <span class="dish-price">18,00 zł</span>
                 </div>
-                <p class="dish-details">Pieczony na miejscu według tradycyjnego przepisu, niezwykle kremowy i puszysty.</p>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Herbata Richmont</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">15,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-footnote">
+                <p>Mleko roślinne / miód (+5 zł) • Przyprawy korzenne (+2 zł)</p>
+              </div>
+            </div>
+
+            <div class="category-wrapper">
+              <h3 class="category-heading">Napoje Zimne</h3>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Woda mineralna</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">6,00 zł</span>
+                </div>
+              </div>
+
+              <div class="menu-dish-item">
+                <div class="dish-main-info">
+                  <h4 class="dish-name">Pepsi / Max / 7UP</h4>
+                  <span class="dish-line"></span>
+                  <span class="dish-price">9,00 zł</span>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
         <div class="menu-info-banner">
@@ -322,17 +446,17 @@
               </div>
               <div class="contact-method-item">
                 <h5>Telefon</h5>
-                <p><a href="tel:+48509908035">509 908 035</a></p>
+                <p><a href="tel:+48509908035" class="contact-link-highlight">509 908 035</a></p>
               </div>
               <div class="contact-method-item">
                 <h5>Napisz do nas</h5>
-                <p><a href="mailto:logopedia1952@wp.pl">logopedia1952@wp.pl</a></p>
+                <p><a href="mailto:logopedia1952@wp.pl" class="contact-link-highlight">logopedia1952@wp.pl</a></p>
               </div>
             </div>
           </div>
           <div class="contact-map-side">
             <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.254146011707!2d17.03784117706323!3d51.12221653931644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9ce8aa73663%3A0xe54e2ee2a430c5e3!2sJedno%C5%9Bci%20Narodowej%2047%2C%2050-262%20Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1718723456789!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.205943806947!2d17.039294577035695!3d51.12353063857501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9db066a33fb%3A0x6001fc9317b622c2!2sJedno%C5%9Bci%20Narodowej%2047%2C%2050-260%20Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1710000000000!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -345,7 +469,7 @@
     <div class="container footer-container">
       <div class="footer-brand-info">
         <h4>CAFE RÓWNIK</h4>
-        <p>Innowacyjny projekt społeczny realizowany we współpracy ze Stowarzyszeniem Twórców i Zwolenników Psychostymulacji.</p>
+        <p>Innowacyjny projekt społeczny ,  którą prowadzi Stowarzyszenie Twórców i Zwolenników Psychostymulacji.</p>
       </div>
       <div class="footer-bottom-bar">
         <span>© 2026 Cafe Równik. Wszystkie prawa zastrzeżone.</span>
@@ -353,8 +477,9 @@
       </div>
     </div>
   </footer>
+
   <script>
-    // Subtelna animacja odkrywania elementów przy scrollu
+    // 1. Animacje pojawiania przy przewijaniu strony (Scroll Reveal)
     const revealEls = document.querySelectorAll('.reveal-up');
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -363,17 +488,61 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -10px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));
 
-    // Delikatny cień nagłówka po przewinięciu strony
+    // 2. Obsługa cienia nagłówka nawigacji
     const header = document.querySelector('.main-header');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 8) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
-      }
+      header.classList.toggle('is-scrolled', window.scrollY > 15);
+    });
+
+    // 3. Interaktywne Filtrowanie Menu Dań
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuColumns = document.querySelectorAll('.menu-column');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const target = btn.getAttribute('data-target');
+
+        menuColumns.forEach(col => {
+          if (target === 'all' || col.getAttribute('data-category') === target) {
+            col.style.display = 'block';
+            setTimeout(() => { col.style.opacity = '1'; col.style.transform = 'scale(1)'; }, 20);
+          } else {
+            col.style.opacity = '0';
+            col.style.transform = 'scale(0.96)';
+            setTimeout(() => { col.style.display = 'none'; }, 300);
+          }
+        });
+      });
+    });
+
+    // 4. Zaawansowane Menu Mobilne (Hamburger Toggle)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNavigation = document.querySelector('.main-navigation');
+    const navLinks = document.querySelectorAll('.menu-link, .nav-btn');
+    
+    function toggleMenu() {
+      const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isOpened);
+      menuToggle.classList.toggle('open');
+      mainNavigation.classList.toggle('active');
+      document.body.style.overflow = !isOpened ? 'hidden' : ''; // Blokada scrolla tła przy otwartym menu
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Zamknięcie menu po kliknięciu w link (płynne przewijanie)
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNavigation.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
     });
   </script>
 
